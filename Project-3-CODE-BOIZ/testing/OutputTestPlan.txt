@@ -1,0 +1,36 @@
+# Created on 10/6/2019 by Matthew Kelch
+
+Test plan for Output.rb:
+
+    Coverage:
+    This test plan will directly cover Output.rb and Main.rb, since the output_html method is called
+    only within Main.rb. Since the purpose of Output.rb is to create a formatted HTML document with CSS styling, this
+    test plan should be more thorough in testing the application than running unit tests on Output.rb.
+
+    Method:
+    This test plan is designed to be followed by a user. Again, since the purpose of Output.rb is to create
+    an HTML document, it is necessary for a human to look over the file to ensure that it is formatted well.
+
+    Responsibility:
+    Everyone on the project team followed this test plan. Anyone else with access to the source code
+    can follow this test plan as well.
+
+    Test Plan Steps:
+    1. Run `Main.rb` in terminal, and make sure that you are prompted by the program to enter in course preferences.
+    2. After the program executes, open the `preferences.txt` file in the root directory to make sure that your
+            preferences were correctly interpreted and saved.
+    3. Check the root directory to make sure that no professor's images were saved to root
+    4. Verify that `output.html` was created in the root directory
+    5. Open `output.html` in Firefox
+        a. Verify that the header includes the College of Engineering logo, as well as header text `CSE Professor Directory`
+        b. Verify that each professor has at least one course listed in the right-most column
+            i. If a professor is listed without a course, then there is a bug in our logic
+        c. Verify that a given professor does not have the same course listed more than once in their course list
+        d. Click on some professors' names to verify that they link to their personal webpage
+        e. Click on some course names to verify that they link to a syllabus page
+        f. Verify that text is readable (based on both size and color), and that the overall layout is readable
+    6. Verify that if an email was specified in step (1.), then that email address should receive a course listing from
+            `CODEBOIZProj3@gmail.com`.
+
+     If the above test plan is followed and all verifications are passed, then a user can be assured that Main.rb
+     and Output.rb work well and are free of any major bugs.
