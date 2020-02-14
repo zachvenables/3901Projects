@@ -1,0 +1,46 @@
+<!-- Created 9/29/2019 by Matthew Kelch -->
+<!-- Edited on 10/6/2019 by Matthew Kelch - Only print profs that are teaching courses specified by user-->
+<!-- Serves as the template for outputting our parsed information -->
+<!-- Only displays professors that teach courses which satisfy the user's query -->
+<html>
+  <head>
+    <title>CSE Professor Directory</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="src/output.css" media="screen" />
+  </head>
+  <body>
+    <div class="header">
+      <img src="src/osu-coe-logo-stacked-dark.png"/>
+      <h1>CSE Professor Directory</h1>
+    </div>
+    <table>
+      <% @hashed_images.each_pair do |name, arr| %>
+        <% next if (arr[1].nil? || arr[1].empty?) %>
+        <tr>
+          <td><img src=<%= arr[0] %>></td>
+          <td class="name">
+            <% if arr[2] != -1 %>
+              <% instructor_site = arr[2] %>
+              <a href=<%= instructor_site %>><%= name %></a>
+            <% else %>
+              <%= name %>
+            <% end %>
+          </td>
+          <td class="courses">
+            <% unless arr[1].nil? %>
+              <% arr[1].each do |course| %>
+                <% num = course[/[\d]{4}(\.\d\d)?H?/] %>
+                <% url = "https://coe-portal.cse.ohio-state.edu/pdf-exports/CSE/CSE-#{num}.pdf" %>
+                <li>
+                  <a href=<%= url %>>
+                    <%= course %>
+                  </a>
+                </li>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+/*  Created 10/5/2019 by Matthew Kelch
+    Defines the styling for the directory output (output.html) */
+
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0px 15px;
+}
+tr {
+    background-color: gainsboro;
+}
+td {
+    padding: 10px
+}
+td.courses {
+    border-left: solid 3px FireBrick;
+    padding: 20px
+}
+li {
+    padding: 5px
+}
+.name {
+    /*Make the font bigger, perhaps red, and center in the <td> */
+    /*font-weight: bold;*/
+    font-size: x-large;
+    text-align: center;
+}
+.header {
+    font-size: medium;
+    margin-bottom: 100px;
+}
+.header img {
+    float: left;
+}
+.header h1 {
+    position: relative;
+    top: 30px;
+    left: 50px;
+}
