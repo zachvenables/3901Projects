@@ -1,0 +1,188 @@
+<!-- Created on 10/12/2019 by Matthew Kelch -->
+<!-- Edited on 10/22/2019 by Neil Mckibben -->
+<!-- Edited on 10/23/2019 by Andrew Petrilli -->
+<!-- Edited on 10/24/2019 by Matthew Kelch - Added classes to CE, C, Delete buttons -->
+<!-- Edited on 10/26/2019 by Andrew Petrilli - adding new memory.js file to page -->
+<!-- Edited 10/30 by Zach Venables - added trig buttons and radian button-->
+<!-- Edited on 10/31/2019 by Matthew Kelch - Added power buttons and rearranged existing buttons -->
+
+<!-- This HTML file defines the layout of the calculator GUI -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" type="text/css" href="../css/site.css">
+    <script src="../javascript/calculator.js"></script>
+    <!-- Added on 10/26/2019 by Andrew Petrilli -->
+    <script src="../javascript/memory.js"></script>
+    <!-- Added 10/30 by Zach Venables -->
+    <script src="../javascript/trig.js"></script>
+    <!-- Added 10/30 by zach venbles -->
+    <script src="../javascript/keystroke.js"></script>
+    <!-- Added 10/31/2019 by Matthew Kelch -->
+    <script src="../javascript/power.js"></script>
+</head>
+
+<body>
+    <select id="calculatorType">
+      <option value="scientific">Scientific</option>
+      <option value="basic">Basic</option>
+      <option value="extended">Extended</option>
+      <option value="none">None</option>
+    </select>
+    <br>
+    <br>
+
+    <div id="canvas">
+        <table id="calculator">
+            <tr>
+                <td colspan="6" id="display"></td>
+            </tr>
+            <!-- Added on 10/23/2019 by Andrew Petrilli -->
+            <tr name="memory">
+                <td></td>
+
+                <td>
+                    <button class="button memory" id="mc" type="button">MC</button>
+                </td>
+                <td>
+                    <button class="button memory" id="mr" type="button">MR</button>
+                </td>
+                <td>
+                    <button class="button memory" id="mplus" type="button">M+</button>
+                </td>
+            </tr>
+            <!-- Added on 10/23/2019 by Andrew Petrilli -->
+            <tr name="memory">
+                <!-- Blank space to preserve order of buttons -->
+                <td></td>
+                <td>
+                    <button class="button memory" id="mminus" type="button">M-</button>
+                </td>
+                <td>
+                    <button class="button memory" id="ms" type="button">MS</button>
+                </td>
+                <td>
+                    <button class="button memory" id="mlist" type="button">M></button>
+                </td>
+                <td>
+                    <button class ="button radians" id="radians" type="button">Rad</button>
+                </td>
+                <!-- Added on 10/29/2019 by Zach Venables -->
+                <td>
+                    <button class="button trig" id="sin" type="button">Sin</button>
+                </td>
+            </tr>
+            <tr>
+                <!-- Blank space to preserve order of buttons -->
+                <td></td>
+                <td>
+                    <button class="button erase" id="ce" type="button">CE</button>
+                </td>
+                <td>
+                    <button class="button erase" id="c" type="button">C</button>
+                </td>
+                <td>
+                    <button class="button erase" id="delete" type="button">Delete</button>
+                </td>
+                <td>
+                    <button class="button operator" id="/" type="button">/</button>
+                </td>
+                <!-- Added on 10/29/2019 by Zach Venables -->
+                <td>
+                    <button class="button trig" id="cos" type="button">Cos</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="button power" id="sqrt" type="button">&radic;x</button>
+                </td>
+                <td>
+                    <button class="button digit" id="7" type="button">7</button>
+                </td>
+                <td>
+                    <button class="button digit" id="8" type="button">8</button>
+                </td>
+                <td>
+                    <button class="button digit" id="9" type="button">9</button>
+                </td>
+                <td>
+                    <button class="button operator" id="*" type="button">*</button>
+                </td>
+                <!-- Added on 10/29/2019 by Zach Venables -->
+                <td>
+                    <button class="button trig" id="tan" type="button">Tan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="button power" id="square" type="button">x<sup>2</sup></button>
+                </td>
+                <td>
+                    <button class="button digit" id="4" type="button">4</button>
+                </td>
+                <td>
+                    <button class="button digit" id="5" type="button">5</button>
+                </td>
+                <td>
+                    <button class="button digit" id="6" type="button">6</button>
+                </td>
+                <td>
+                    <button class="button operator" id="-" type="button">--</button>
+                </td>
+                <!-- Added on 10/29/2019 by Zach Venables -->
+                <td>
+                    <button class="button trig" id="arcsin" type="button">Arcsin</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="button power" id="cube" type="button">x<sup>3</sup></button>
+                </td>
+                <td>
+                    <button class="button digit" id="1" type="button">1</button>
+                </td>
+                <td>
+                    <button class="button digit" id="2" type="button">2</button>
+                </td>
+                <td>
+                    <button class="button digit" id="3" type="button">3</button>
+                </td>
+                <td>
+                    <button class="button operator" id="+" type="button">+</button>
+                </td>
+                <!-- Added on 10/29/2019 by Zach Venables -->
+                <td>
+                    <button class="button trig" id="arccos" type="button">Arccos</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="button power" id="recip" type="button">1/x</button>
+                </td>
+                <td>
+                    <button class="button value" id="posNeg" type="button">+/-</button>
+                </td>
+                <td>
+                    <button class="button digit" id="0" type="button">0</button>
+                </td>
+                <td>
+                    <button class="button equals" id="=" type="button">=</button>
+                </td>
+                <td>
+                    <button class="button decimal" id="." type="button">.</button>
+                </td>
+                <!-- Added on 10/29/2019 by Zach Venables -->
+                <td>
+                    <button class="button trig" id="arctan" type="button">Arctan</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
